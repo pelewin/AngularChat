@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="customerApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- ANGULAR JS -->
+    <script src="/js/angular/angular.js"></script>
+    <script src="/js/angular/angular-route.js"></script>
+    <script src="/js/angular/angular-resource.js"></script>
+    <!-- Other -->
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="/js/customers.js"></script>
+</head>
+<body>
+<div style="margin-left: 10%; margin-top: 30px">
+    <div>
+        <label>Name:</label>
+        <input type="text" ng-model="yourName" placeholder="Enter a name here">
+
+        <h1>Hello {{yourName}}!</h1>
+    </div>
+    <hr>
+    <div ng-view></div>
+</div>
+</body>
+</html>

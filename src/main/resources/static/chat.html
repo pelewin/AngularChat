@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html ng-app="angularChat">
+<head>
+    <meta charset="utf-8" />
+    <title>HTML5 Chat with AngularJs, Spike-Engine and Twitter Bootstrap</title>
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+
+    <!-- ANGULAR JS -->
+    <script src="/js/angular/angular.js"></script>
+    <script src="/js/angular/angular-route.js"></script>
+    <script src="/js/angular/angular-resource.js"></script>
+    <!-- Other -->
+    <script src="/js/sockjs-0.3.4.js"></script>
+    <script src="/js/stomp.js"></script>
+    <script src="/js/jquery-1.11.1.min.js" type="application/javascript"></script>
+
+    <script src="/js/chat.js"></script>
+
+</head>
+<body>
+
+    <div id="browser-window" ng-controller="messages">
+        <div id="viewport">
+            <div id="viewport-content">
+                <div class="bubble-container" ng-repeat="m in messages">
+                    <!--<div class="avatar avatar-{{m.side}}"><img src="{{m.avatar}}" /></div>-->
+                    <div class="bubble bubble-left">{{m.text}}</div>
+                </div>
+            </div>
+        </div>
+
+        <form class="row row-chat" ng-submit="sendMessage();">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="messageText" placeholder="Type your message" />
+
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </span>
+            </div>
+
+        </form>
+    </div>
+
+ </body>
+</html>

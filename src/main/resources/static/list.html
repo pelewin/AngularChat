@@ -1,0 +1,24 @@
+<div>DATA</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Tel</th>
+        <th><a href="#/new"><i class="icon-plus-sign"></i></a></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="customer in customersList | orderBy:'name'">
+        <td><a ng-href="customers/{{customer.id}}" target="_blank">{{customer.id}}</a></td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.address}}</td>
+        <td>{{customer.telephoneNumber}}</td>
+        <td>
+            <a ng-href="#/edit/{{customer.id}}"><i class="icon-pencil"></i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>
