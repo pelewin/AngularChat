@@ -5,9 +5,10 @@
 }
 
 #browser-window {
-    background: url("../gfx/background.png");
+    #background: url("../gfx/background.png");
+    background-color: gainsboro;
     height: 538px;
-    width: 335px;
+    width: 100%;
     padding: 49px 25px 10px 25px;
     margin: auto;
     position: relative;
@@ -16,7 +17,7 @@
 #viewport {
     height: 420px;
     overflow: hidden;
-    width: 300px;
+    #width: 300px;
 }
 
 #viewport-content {
@@ -28,7 +29,7 @@
     position: absolute;
     bottom: 20px;
     margin: 0;
-    width: 286px;
+    #width: 286px;
 }
 
 .bubble-container {
@@ -36,7 +37,6 @@
     clear: both;
     position: relative;
     margin-bottom: 10px;
-    margin-right: 10px;
     min-height: 53px;
 }
 
