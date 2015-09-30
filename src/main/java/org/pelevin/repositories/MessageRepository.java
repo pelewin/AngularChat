@@ -1,8 +1,6 @@
 package org.pelevin.repositories;
 
-import org.pelevin.model.CustomerVO;
 import org.pelevin.model.MessageVO;
-import org.pelevin.model.UserVO;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

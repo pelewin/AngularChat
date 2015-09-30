@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html ng-app="customerApp">
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+<html ng-app="angularChat">
+<head>
+    <meta charset="utf-8" />
+    <title>HTML5 Chat with AngularJs, Spike-Engine and Twitter Bootstrap</title>
+
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], .ng-cloak {
+            display: none !important;
+        }
+    </style>
     <!-- ANGULAR JS -->
     <script src="/js/angular/angular.js"></script>
     <script src="/js/angular/angular-route.js"></script>
     <script src="/js/angular/angular-resource.js"></script>
     <!-- Other -->
-    <link rel="stylesheet" href="bootstrap.css">
-    <script src="/js/customers.js"></script>
+    <script src="/js/sockjs-0.3.4.js"></script>
+    <script src="/js/stomp.js"></script>
+    <script src="/js/jquery-1.11.1.min.js" type="application/javascript"></script>
+
+    <script src="/js/chat.js"></script>
+
 </head>
 <body>
-<div style="margin-left: 10%; margin-top: 30px">
-    <div>
-        <label>Name:</label>
-        <input type="text" ng-model="yourName" placeholder="Enter a name here">
 
-        <h1>Hello {{yourName}}!</h1>
-    </div>
-    <hr>
-    <div ng-view></div>
-</div>
+<div ng-view/>
+
 </body>
 </html>

@@ -1,5 +1,4 @@
-﻿
-body {
+﻿body {
     font-family: 'Open Sans', Arial, sans-serif;
     font-weight: 300;
     font-size: 14px;
@@ -109,4 +108,12 @@ body {
     margin-right: 75px;
 }
 
+#login-container {
+    margin-top: 200px;
+}
 
+.login-button {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}

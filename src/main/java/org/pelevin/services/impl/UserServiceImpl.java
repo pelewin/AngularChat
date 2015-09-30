@@ -1,10 +1,7 @@
 package org.pelevin.services.impl;
 
-import org.pelevin.model.CustomerVO;
 import org.pelevin.model.UserVO;
-import org.pelevin.repositories.CustomerRepository;
 import org.pelevin.repositories.UserRepository;
-import org.pelevin.services.CustomerService;
 import org.pelevin.services.UserService;
 import org.springframework.stereotype.Service;
 
