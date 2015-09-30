@@ -15,13 +15,13 @@
 
 #viewport {
     height: 420px;
-    overflow-y: scroll;
+    overflow: hidden;
     width: 300px;
 }
 
 #viewport-content {
     position: relative;
-    #bottom: -500px;
+    bottom: -500px;
 }
 
 .row-chat {
