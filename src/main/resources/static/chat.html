@@ -6,7 +6,10 @@
     <div id="viewport">
         <div id="viewport-content">
             <div class="bubble-container" ng-repeat="m in messages">
-                <!--<div class="avatar avatar-{{m.side}}"><img src="{{m.avatar}}" /></div>-->
+                <div class="author-time-block">
+                    <div class="author">{{m.user.name}}</div>
+                    <div class="time">{{m.date | date : 'yy-MM-dd HH:mm'}}</div>
+                </div>
                 <div class="bubble bubble-left">{{m.text}}</div>
             </div>
         </div>

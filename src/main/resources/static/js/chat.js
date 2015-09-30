@@ -75,6 +75,7 @@ angular.module('angularChat', ['ngRoute'])
         $scope.sendMessage = function () {
             stompClient.send("/app/message", {}, $scope.messageText);
             $scope.messageText = "";
+            gotoBottom();
         };
 
         $scope.redraw = function () {

@@ -14,13 +14,14 @@
 }
 
 #viewport {
-    overflow: hidden;
     height: 420px;
+    overflow-y: scroll;
+    width: 300px;
 }
 
 #viewport-content {
     position: relative;
-    bottom: -500px;
+    #bottom: -500px;
 }
 
 .row-chat {
@@ -95,7 +96,7 @@
 
 .bubble-left {
     overflow: hidden;
-    margin-left: 75px;
+    #margin-left: 75px;
 }
 
 .avatar-right {
@@ -116,4 +117,16 @@
     width: 50%;
     margin: 0 auto;
     display: block;
+}
+
+.author-time-block {
+}
+
+.author{
+    float:left;
+    font-weight: 600;
+}
+
+.time{
+    margin-left: 185px;
 }
