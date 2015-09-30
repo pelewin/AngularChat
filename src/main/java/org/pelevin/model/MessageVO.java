@@ -19,9 +19,10 @@ public class MessageVO extends BaseVO {
 		// for JPA
 	}
 
-	public MessageVO(String text) {
+	public MessageVO(UserVO user, String text) {
 		this.text = text;
 		this.date = new Date();
+		this.user = user;
 	}
 
 	public UserVO getUser() {

@@ -12,5 +12,6 @@ import java.util.Optional;
 public interface UserService extends BaseService<UserVO> {
 
 	Optional<UserVO> findById(String id);
+	Optional<UserVO> findByName(String name);
 
 }

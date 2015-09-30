@@ -17,4 +17,10 @@ public class UserServiceImpl extends BaseServiceImpl<UserVO, UserRepository> imp
 	public Optional<UserVO> findById(String id) {
 		return getRepository().findById(id);
 	}
+
+	@Override
+	public Optional<UserVO> findByName(String name) {
+		return getRepository().findByName(name);
+	}
+
 }

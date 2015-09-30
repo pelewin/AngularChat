@@ -35,4 +35,5 @@ public abstract class BaseServiceImpl<T extends BaseVO, R extends MongoRepositor
 	public void delete(String id) {
 		repository.delete(id);
 	}
+
 }

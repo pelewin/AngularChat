@@ -70,7 +70,7 @@ angular.module('angularChat', ['ngRoute'])
             }
         );
 
-        //connect();
+        connect();
 
         $scope.sendMessage = function () {
             stompClient.send("/app/message", {}, $scope.messageText);
