@@ -1,6 +1,6 @@
 ﻿body {
     font-family: 'Open Sans', Arial, sans-serif;
-    font-weight: 300;
+    font-weight: 800;
     font-size: 14px;
 }
 
@@ -59,7 +59,7 @@
     -moz-border-radius: 3px;
     border-radius: 3px;
     background: rgba(255, 255, 255, 0.9);
-    color: #575858;
+    color: black;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
