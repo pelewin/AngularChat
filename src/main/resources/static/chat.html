@@ -1,24 +1,26 @@
-﻿
-<div class="top">
-    <button ng-click="logout()" class="btn btn-primary login-button">Logout</button>
+﻿<div class="top">
+    <div class="logout-container">
+        <button ng-click="logout()" class="btn btn-primary login-button">Logout</button>
+    </div>
+    <div class="userName">{{userName}}</div>
 </div>
 
 
 <div id="browser-window">
-   <div id="viewport-content">
-            <div class="bubble-container" ng-repeat="m in messages">
-                <div class="author-time-block">
-                    <div class="author">{{m.user.name}}</div>
-                    <div class="time">{{m.date | date : 'yy-MM-dd HH:mm'}}</div>
-                </div>
-               <div class="bubble bubble-left">{{m.text}}</div>
-       </div>
-   </div>
+    <div id="viewport-content">
+        <div class="bubble-container" ng-repeat="m in messages">
+            <div class="author-time-block">
+                <div class="author">{{m.user.name}}</div>
+                <div class="time">{{m.date | date : 'yy-MM-dd HH:mm'}}</div>
+            </div>
+            <div class="bubble bubble-left">{{m.text}}</div>
+        </div>
+    </div>
 </div>
 
 <form class="row row-chat" ng-submit="sendMessage();">
     <div class="input-group">
-        <input type="text" class="form-control" ng-model="messageText" placeholder="Type your message" />
+        <input type="text" class="form-control" ng-model="messageText" placeholder="Type your message"/>
 
                 <span class="input-group-btn">
                     <button type="submit" class="btn btn-primary">Send</button>

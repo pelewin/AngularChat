@@ -61,12 +61,17 @@ angular.module('angularChat', ['ngRoute'])
     .controller('messages',
     function ($rootScope, $scope, $http, $location) {
 
+        $http.get('user').success(function (data) {
+                $scope.userName = data.name;
+        });
+
         var stompClient = null;
         $scope.messages = [];
 
         $http.get('/api/messages').
             success(function (data) {
                 $scope.messages = data;
+                gotoBottom();
             }
         );
 
@@ -92,7 +97,9 @@ angular.module('angularChat', ['ngRoute'])
                     $scope.messages.push(newMessage);
                     $scope.$apply();
                     gotoBottom();
-                    notifyMe(newMessage.user.name, newMessage.text);
+                    if (newMessage.user.name != $scope.userName) {
+                        notifyMe(newMessage.user.name, newMessage.text);
+                    }
 
                 });
             });
@@ -121,40 +128,30 @@ angular.module('angularChat', ['ngRoute'])
 
 function gotoBottom() {
     // Animate
-    $("#viewport-content").animate({
-        bottom: $("#viewport-content").height() - $("#viewport").height()
-    }, 250);
+    $("#viewport-content").animate({ scrollTop: $('#viewport-content')[0].scrollHeight}, 1000);
 };
 
 function notifyMe(author, message) {
 
+    if (isFocused == "focus") return;
+
     var options = {
-      body: message,
-      //icon: theIcon
+        body: message,
+        //icon: theIcon
     }
 
-  // Let's check if the browser supports notifications
-  if (!("Notification" in window)) {
-    alert("This browser does not support desktop notification");
-  }
-
-  // Let's check whether notification permissions have already been granted
-  else if (Notification.permission === "granted") {
-    // If it's okay let's create a notification
-    var notification = new Notification(author, options);
-  }
-
-  // Otherwise, we need to ask the user for permission
-  else if (Notification.permission !== 'denied') {
-    Notification.requestPermission(function (permission) {
-      // If the user accepts, let's create a notification
-      if (permission === "granted") {
-        var notification = new Notification(author, options);
-      }
+    var myNotification = new Notify(author, {
+        body: message,
+        timeout: 3
     });
-  }
 
-  // At last, if the user has denied notifications, and you
-  // want to be respectful there is no need to bother them any more.
+    myNotification.show();
 }
+
+var isFocused;
+
+
+$(window).on("blur focus", function(e) {
+    isFocused = e.type;
+})
 

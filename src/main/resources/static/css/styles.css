@@ -11,12 +11,14 @@
     padding: 10px 10px 110px 10px;
     margin: auto;
     position: fixed;
-    top: 40px;
- }
+    top: 50px;
+}
 
-.top{
-    position:fixed;
-    top:0;
+.top {
+    osition: fixed;
+    top: 0;
+    width: 100%;
+    margin-top: 5px;
 }
 
 #viewport {
@@ -118,22 +120,35 @@
 
 #login-container {
     margin-top: 200px;
+
 }
 
 .login-button {
-    width: 50%;
     margin: 0 auto;
     display: block;
+    margin-right: 10px;
+}
+
+.userName {
+    float: right;
+    margin-top: 2px;
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+.logout-container {
+    float: right;
 }
 
 .author-time-block {
 }
 
-.author{
-    float:left;
+.author {
+    float: left;
     font-weight: 600;
 }
 
-.time{
+.time {
     margin-left: 175px;
+    text-align: right;
 }
