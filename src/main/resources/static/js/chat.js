@@ -88,9 +88,11 @@ angular.module('angularChat', ['ngRoute'])
             stompClient.connect({}, function (frame) {
                 console.log('Connected: ' + frame);
                 stompClient.subscribe('/topic/messages', function (message) {
-                    $scope.messages.push(JSON.parse(message.body));
+                    newMessage = JSON.parse(message.body);
+                    $scope.messages.push(newMessage);
                     $scope.$apply();
                     gotoBottom();
+                    notifyMe(newMessage.user.name, newMessage.text);
 
                 });
             });
@@ -123,4 +125,36 @@ function gotoBottom() {
         bottom: $("#viewport-content").height() - $("#viewport").height()
     }, 250);
 };
+
+function notifyMe(author, message) {
+
+    var options = {
+      body: message,
+      //icon: theIcon
+    }
+
+  // Let's check if the browser supports notifications
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  }
+
+  // Let's check whether notification permissions have already been granted
+  else if (Notification.permission === "granted") {
+    // If it's okay let's create a notification
+    var notification = new Notification(author, options);
+  }
+
+  // Otherwise, we need to ask the user for permission
+  else if (Notification.permission !== 'denied') {
+    Notification.requestPermission(function (permission) {
+      // If the user accepts, let's create a notification
+      if (permission === "granted") {
+        var notification = new Notification(author, options);
+      }
+    });
+  }
+
+  // At last, if the user has denied notifications, and you
+  // want to be respectful there is no need to bother them any more.
+}
 
